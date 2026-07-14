@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "winsys.pro Legal"
+  name: "Legal.Winsys.Pro"
   text: "Legal"
-  tagline: My great project tagline
+  tagline: "ЛегалПроэкт"
   actions:
     - theme: brand
       text: Markdown Examples
