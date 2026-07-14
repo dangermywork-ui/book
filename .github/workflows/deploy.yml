@@ -1,8 +1,8 @@
-name: Deploy site to Pages
+name: Deploy VitePress site to Pages
 
 on:
   push:
-    branches: [main] # Запускать сборку при каждом пуше в ветку main
+    branches: [main]
 
 permissions:
   contents: read
@@ -35,7 +35,7 @@ jobs:
         run: npm ci
         
       - name: Build with VitePress
-        run: npm run docs:build # Сборка сайта силами VitePress
+        run: npm run docs:build
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -45,7 +45,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps:deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     needs: build
     runs-on: ubuntu-latest
     steps:
