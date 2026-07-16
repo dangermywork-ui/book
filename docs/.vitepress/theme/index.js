@@ -4,6 +4,8 @@ import DefaultTheme from "vitepress/theme";
 import Giscus from './components/Giscus.vue'
 import "./style.css";
 
+// import "./custom.css";
+
 /** @type {import('vitepress').Theme} */
 export default {
   extends: DefaultTheme,

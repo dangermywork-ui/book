@@ -72,7 +72,6 @@ export default defineConfig({
       ],
     },
 
-    
     // sidebar: [
     //   {
     //     text: 'Примеры',
