@@ -37,6 +37,16 @@ const createWindowsBlock = (title, extraItems = []) => {
     ],
   };
 };
+const OzonBlock = (title, extraItems = []) => {
+  return {
+    text: title,
+    items: [
+      { text: "Ozon", link: "#" },
+      { text: "Навигация Ozon", link: "#" },
+      ...extraItems, // Добавляем уникальные пункты, если есть
+    ],
+  };
+};
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -46,8 +56,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       ...createNavBlock(),
-      createLinuxBlock("Linux"),
-      createWindowsBlock("Windows"),
+      // createLinuxBlock("Linux"),
+      // createWindowsBlock("Windows"),
+      // OzonBlock("Про Ozon")
       // { text: 'Домашняя', link: '/' },
       // { text: 'Навигация', link: '/menu' }
     ],
@@ -75,8 +86,9 @@ export default defineConfig({
       // Меню по умолчанию (если путь не совпал выше)
       "/": [
         createStandardBlock("Меню"),
-        createLinuxBlock("Linux"),
-        createWindowsBlock("Windows"),
+        // createLinuxBlock("Linux"),
+        // createWindowsBlock("Windows"),
+        // OzonBlock("Про Ozon")
         // { text: 'Главная', items: [{ text: 'Главная', link: '/' },{ text: 'Навигация', link: '/menu' }] },
         // { text: "Linux", items: [{ text: "Linux", link: "/linux" }] },
       ],
