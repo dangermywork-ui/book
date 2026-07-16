@@ -21,7 +21,7 @@ const createLinuxBlock = (title, extraItems = []) => {
   return {
     text: title,
     items: [
-      { text: "Linux", link: "/linux" },
+      { text: "Linux", link: "/os/linux/linux" },
       { text: "Навигация Linux", link: "#" },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
@@ -31,7 +31,7 @@ const createWindowsBlock = (title, extraItems = []) => {
   return {
     text: title,
     items: [
-      { text: "Windows", link: "#" },
+      { text: "Windows", link: "/os/windows/windows" },
       { text: "Навигация Windows", link: "#" },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
@@ -50,19 +50,29 @@ const OzonBlock = (title, extraItems = []) => {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "winsys.pro Legal",
+  title: "Legal.Winsys.Pro",
   description: "Legal",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       ...createNavBlock(),
-      // createLinuxBlock("Linux"),
-      // createWindowsBlock("Windows"),
-      // OzonBlock("Про Ozon")
-      // { text: 'Домашняя', link: '/' },
-      // { text: 'Навигация', link: '/menu' }
+      createLinuxBlock("Linux"),
+      createWindowsBlock("Windows"),
+      OzonBlock("Про Ozon"),
     ],
+    sidebar: {
+      "/linux": [createLinuxBlock("Linux"), createStandardBlock("Меню")],
+      "/windows": [createWindowsBlock("Windows"), createStandardBlock("Меню")],
+      // Меню по умолчанию (если путь не совпал выше)
+      "/": [
+        createStandardBlock("Меню"),
+        createLinuxBlock("Linux"),
+        createWindowsBlock("Windows"),
+        OzonBlock("Про Ozon"),
+      ],
+    },
 
+    
     // sidebar: [
     //   {
     //     text: 'Примеры',
@@ -79,20 +89,6 @@ export default defineConfig({
     //     ]
     //   }
     // ],
-
-    sidebar: {
-      "/linux": [createLinuxBlock("Linux"), createStandardBlock("Меню")],
-      "/windows": [createWindowsBlock("Windows"), createStandardBlock("Меню")],
-      // Меню по умолчанию (если путь не совпал выше)
-      "/": [
-        createStandardBlock("Меню"),
-        // createLinuxBlock("Linux"),
-        // createWindowsBlock("Windows"),
-        // OzonBlock("Про Ozon")
-        // { text: 'Главная', items: [{ text: 'Главная', link: '/' },{ text: 'Навигация', link: '/menu' }] },
-        // { text: "Linux", items: [{ text: "Linux", link: "/linux" }] },
-      ],
-    },
 
     // socialLinks: [
     //   { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
