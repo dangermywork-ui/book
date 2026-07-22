@@ -80,6 +80,22 @@ This is a dangerous warning.
 This is a details block.
 :::
 
+<!-- Подсветить строки 2 и 4-5 -->
+```js {2,4-5}
+const a = 1;
+const b = 2; // эта строка подсветится
+const c = 3;
+const d = 4; // эта тоже
+const e = 5; // и эта
+```
+
+<!-- Показать добавленные и удаленные строки (diff) -->
+```js
+const total = 100 // [md-vue:error]
+const total = 200 // [md-vue:ins]
+```
+
+
 ## More
 
 Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
