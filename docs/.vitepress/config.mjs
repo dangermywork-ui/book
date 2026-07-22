@@ -17,6 +17,17 @@ const StandardBlock = (title, extraItems = []) => {
     ],
   };
 };
+const OSBlock = (title, extraItems = []) => {
+  return {
+    text: title,
+    items: [
+      { text: "Linux", link: "/os/linux/linux" },
+      { text: "Windows", link: "/os/windows/windows" },
+      // { text: "Навигация Linux", link: "#" },
+      ...extraItems, // Добавляем уникальные пункты, если есть
+    ],
+  };
+};
 const LinuxBlock = (title, extraItems = []) => {
   return {
     text: title,
@@ -56,6 +67,15 @@ const UnicodeBlock = (title, extraItems = []) => {
     ],
   };
 };
+const SoftBlock = (title, extraItems = []) => {
+  return {
+    text: title,
+    items: [
+      { text: "Ansible", link: "/ansible/ansible_команды" },
+      ...extraItems, // Добавляем уникальные пункты, если есть
+    ],
+  };
+};
 const TextBlock = (title, extraItems = []) => {
   return {
     text: title,
@@ -84,8 +104,10 @@ export default defineConfig({
     },
     nav: [
       ...NavBlock(),
-      LinuxBlock("Linux"),
-      WindowsBlock("Windows"),
+      // LinuxBlock("Linux"),
+      // WindowsBlock("Windows"),
+      OSBlock("OS"),
+      SoftBlock("SoFt"),
       // OzonBlock("Про Ozon"),
       UnicodeBlock("Юникод"),
     ],
@@ -96,8 +118,10 @@ export default defineConfig({
       "/": [
         StandardBlock("Меню"),
         TextBlock("Статьи"),
-        LinuxBlock("Linux"),
-        WindowsBlock("Windows"),
+        OSBlock("OS"),
+        SoftBlock("SoFt"),
+        // LinuxBlock("Linux"),
+        // WindowsBlock("Windows"),
         // OzonBlock("Про Ozon"),
         UnicodeBlock("Юникод"),
       ],
