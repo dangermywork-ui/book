@@ -67,7 +67,7 @@ export default defineConfig({
       ...createNavBlock(),
       createLinuxBlock("Linux"),
       createWindowsBlock("Windows"),
-      OzonBlock("Про Ozon"),
+      // OzonBlock("Про Ozon"),
       UnicodeBlock("Юникод"),
     ],
     sidebar: {
@@ -78,7 +78,7 @@ export default defineConfig({
         createStandardBlock("Меню"),
         createLinuxBlock("Linux"),
         createWindowsBlock("Windows"),
-        OzonBlock("Про Ozon"),
+        // OzonBlock("Про Ozon"),
         UnicodeBlock("Юникод"),
       ],
     },
