@@ -1,13 +1,13 @@
 import { defineConfig } from "vitepress";
 
-const createNavBlock = () => {
+const NavBlock = () => {
   return [
     { text: "Домашняя", link: "/" },
     { text: "Навигация", link: "/menu" },
   ];
 };
 
-const createStandardBlock = (title, extraItems = []) => {
+const StandardBlock = (title, extraItems = []) => {
   return {
     text: title,
     items: [
@@ -17,7 +17,7 @@ const createStandardBlock = (title, extraItems = []) => {
     ],
   };
 };
-const createLinuxBlock = (title, extraItems = []) => {
+const LinuxBlock = (title, extraItems = []) => {
   return {
     text: title,
     items: [
@@ -27,7 +27,7 @@ const createLinuxBlock = (title, extraItems = []) => {
     ],
   };
 };
-const createWindowsBlock = (title, extraItems = []) => {
+const WindowsBlock = (title, extraItems = []) => {
   return {
     text: title,
     items: [
@@ -56,7 +56,17 @@ const UnicodeBlock = (title, extraItems = []) => {
     ],
   };
 };
-
+const TextBlock = (title, extraItems = []) => {
+  return {
+    text: title,
+    items: [
+      { text: "Гормезис", link: "/Text/Гормезис/Гормезис" },
+      { text: "Инсулинорезистентность", link: "/Text/Инсулинорезистентность/Инсулинорезистентность" },
+      { text: "Гормезис", link: "/Text/Эндотелий/Эндотелий" },
+      ...extraItems, // Добавляем уникальные пункты, если есть
+    ],
+  };
+};
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Legal.Winsys.Pro",
@@ -64,20 +74,21 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      ...createNavBlock(),
-      createLinuxBlock("Linux"),
-      createWindowsBlock("Windows"),
+      ...NavBlock(),
+      LinuxBlock("Linux"),
+      WindowsBlock("Windows"),
       // OzonBlock("Про Ozon"),
       UnicodeBlock("Юникод"),
     ],
     sidebar: {
-      "/linux": [createLinuxBlock("Linux"), createStandardBlock("Меню")],
-      "/windows": [createWindowsBlock("Windows"), createStandardBlock("Меню")],
+      "/linux": [LinuxBlock("Linux"), StandardBlock("Меню")],
+      "/windows": [WindowsBlock("Windows"), StandardBlock("Меню")],
       // Меню по умолчанию (если путь не совпал выше)
       "/": [
-        createStandardBlock("Меню"),
-        createLinuxBlock("Linux"),
-        createWindowsBlock("Windows"),
+        StandardBlock("Меню"),
+        TextBlock("Статьи"),
+        LinuxBlock("Linux"),
+        WindowsBlock("Windows"),
         // OzonBlock("Про Ozon"),
         UnicodeBlock("Юникод"),
       ],
