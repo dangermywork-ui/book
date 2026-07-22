@@ -22,7 +22,7 @@ const LinuxBlock = (title, extraItems = []) => {
     text: title,
     items: [
       { text: "Linux", link: "/os/linux/linux" },
-      { text: "Навигация Linux", link: "#" },
+      // { text: "Навигация Linux", link: "#" },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
   };
@@ -32,7 +32,7 @@ const WindowsBlock = (title, extraItems = []) => {
     text: title,
     items: [
       { text: "Windows", link: "/os/windows/windows" },
-      { text: "Навигация Windows", link: "#" },
+      // { text: "Навигация Windows", link: "#" },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
   };
@@ -42,7 +42,7 @@ const OzonBlock = (title, extraItems = []) => {
     text: title,
     items: [
       { text: "Ozon", link: "#" },
-      { text: "Навигация Ozon", link: "#" },
+      // { text: "Навигация Ozon", link: "#" },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
   };
@@ -61,7 +61,10 @@ const TextBlock = (title, extraItems = []) => {
     text: title,
     items: [
       { text: "Гормезис", link: "/Text/Гормезис/Гормезис" },
-      { text: "Инсулинорезистентность", link: "/Text/Инсулинорезистентность/Инсулинорезистентность" },
+      {
+        text: "Инсулинорезистентность",
+        link: "/Text/Инсулинорезистентность/Инсулинорезистентность",
+      },
       { text: "Гормезис", link: "/Text/Эндотелий/Эндотелий" },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
@@ -73,6 +76,12 @@ export default defineConfig({
   description: "Legal",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    outlineTitle: "Содержание страницы",
+    returnToTopLabel: "Вернуться к началу",
+    docFooter: {
+      prev: "Предыдущая страница",
+      next: "Следующая страница",
+    },
     nav: [
       ...NavBlock(),
       LinuxBlock("Linux"),
