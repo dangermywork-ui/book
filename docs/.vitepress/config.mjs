@@ -47,6 +47,15 @@ const OzonBlock = (title, extraItems = []) => {
     ],
   };
 };
+const UnicodeBlock = (title, extraItems = []) => {
+  return {
+    text: title,
+    items: [
+      { text: "Юникод", link: "/unicode/unicode" },
+      ...extraItems, // Добавляем уникальные пункты, если есть
+    ],
+  };
+};
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -59,6 +68,7 @@ export default defineConfig({
       createLinuxBlock("Linux"),
       createWindowsBlock("Windows"),
       OzonBlock("Про Ozon"),
+      UnicodeBlock("Юникод"),
     ],
     sidebar: {
       "/linux": [createLinuxBlock("Linux"), createStandardBlock("Меню")],
@@ -69,6 +79,7 @@ export default defineConfig({
         createLinuxBlock("Linux"),
         createWindowsBlock("Windows"),
         OzonBlock("Про Ozon"),
+        UnicodeBlock("Юникод"),
       ],
     },
 
