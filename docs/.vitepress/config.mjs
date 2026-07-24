@@ -72,6 +72,7 @@ const SoftBlock = (title, extraItems = []) => {
     text: title,
     items: [
       { text: "Ansible", link: "/ansible/ansible_команды" },
+      { text: "Zabbix", link: "/zabbix/zabbix_команды" },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
   };
