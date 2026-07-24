@@ -81,6 +81,7 @@ const TextBlock = (title, extraItems = []) => {
   return {
     text: title,
     items: [
+      { text: "Системный администратор", link: "/системный_администратор/вопросы" },
       { text: "Гормезис", link: "/Text/Гормезис/Гормезис" },
       {
         text: "Инсулинорезистентность",
