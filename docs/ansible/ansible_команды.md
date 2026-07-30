@@ -462,3 +462,4 @@ ansible-galaxy role init --role-skeleton=./skeleton  # Создание requirem
 - [Ansible Cheat Sheet](https://cheat.readthedocs.io/en/latest/ansible/)
 ```
 
+<Giscus />
