@@ -1,3 +1,2 @@
 ## <center> Оглавление </center>
 
-<Giscus />
