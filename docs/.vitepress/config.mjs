@@ -20,12 +20,10 @@ const StandardBlock = (title, extraItems = []) => {
 
 // const OSBlock = (title, extraItems = []) => {
 //   return {
-
 //     text: title,
 //     items: [
 //       { text: "Linux", link: "/os/linux/linux" },
 //       { text: "Linux2", link: "/os/linux/linux" },
-
 //       { text: "Windows", link: "/os/windows/windows" },
 //       // { text: "Навигация Linux", link: "#" },
 //       ...extraItems, // Добавляем уникальные пункты, если есть
@@ -45,7 +43,7 @@ const OSBlock = (title, extraItems = []) => {
         collapsed: true,
         items: [
           { text: "Linux", link: "/os/linux/linux" },
-          { text: "SSH", link: "/os/linux/SSH" },
+          { text: "SSH", link: "/os/linux/ssh" },
         ],
       },
       { text: "Windows", link: "/os/windows/windows" },
