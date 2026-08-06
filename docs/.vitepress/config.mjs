@@ -17,17 +17,43 @@ const StandardBlock = (title, extraItems = []) => {
     ],
   };
 };
+
+// const OSBlock = (title, extraItems = []) => {
+//   return {
+
+//     text: title,
+//     items: [
+//       { text: "Linux", link: "/os/linux/linux" },
+//       { text: "Linux2", link: "/os/linux/linux" },
+
+//       { text: "Windows", link: "/os/windows/windows" },
+//       // { text: "Навигация Linux", link: "#" },
+//       ...extraItems, // Добавляем уникальные пункты, если есть
+//     ],
+//   };
+// };
+
 const OSBlock = (title, extraItems = []) => {
   return {
     text: title,
     items: [
-      { text: "Linux", link: "/os/linux/linux" },
+      // { text: "Linux", link: "/os/linux/linux" },
+      // { text: "Linux2", link: "/os/linux/linux" },
+      // Лишнее "items: [" удалено
+      {
+        text: "Linux",
+        collapsed: true,
+        items: [
+          { text: "Linux", link: "/os/linux/linux" },
+          { text: "SSH", link: "/os/linux/SSH" },
+        ],
+      },
       { text: "Windows", link: "/os/windows/windows" },
-      // { text: "Навигация Linux", link: "#" },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
   };
 };
+
 const LinuxBlock = (title, extraItems = []) => {
   return {
     text: title,
@@ -83,20 +109,26 @@ const TextBlock = (title, extraItems = []) => {
     items: [
       {
         text: "Технические помещения",
-        collapsed: true, 
+        collapsed: true,
         items: [
           { text: "Мастерская", link: "/технические_помещения/мастерская" },
-          { text: "Беседка", link: "/технические_помещения/беседка" }
-        ]
+          { text: "Беседка", link: "/технические_помещения/беседка" },
+        ],
       },
-      { text: "Водопроводная магистраль", link: "/водопровод/магистраль_водопроводная" },
-      { text: "Системный администратор", link: "/системный_администратор/вопросы" },
+      {
+        text: "Водопроводная магистраль",
+        link: "/водопровод/магистраль_водопроводная",
+      },
+      {
+        text: "Системный администратор",
+        link: "/системный_администратор/вопросы",
+      },
       { text: "Гормезис", link: "/Text/Гормезис/Гормезис" },
       {
         text: "Инсулинорезистентность",
         link: "/Text/Инсулинорезистентность/Инсулинорезистентность",
       },
-      { text: "Гормезис", link: "/Text/Эндотелий/Эндотелий" }, 
+      { text: "Гормезис", link: "/Text/Эндотелий/Эндотелий" },
       ...extraItems,
     ],
   };
