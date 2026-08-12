@@ -103,6 +103,12 @@ title: Windows 💻
 | `curl -O URL` | ⬇️ Загрузка файлов (в PowerShell 7+) |
 
 ---
+## Создание сетевого интерфейса
+
+```
+Add-VMNetworkAdapter -ManagementOS -Name "SecondGateway" -SwitchName "Внешний интерфейс"
+```
+---
 
 ## 📦 Архивация и сжатие
 

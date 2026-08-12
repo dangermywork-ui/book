@@ -47,6 +47,14 @@ const OSBlock = (title, extraItems = []) => {
         ],
       },
       { text: "Windows", link: "/os/windows/windows" },
+            {
+        text: "RouterOS v7",
+        collapsed: true,
+        items: [
+          { text: "RouterOS v7 команды", link: "/os/RouterOS7/RouterOS7-команды" },
+          // { text: "SSH", link: "/os/linux/ssh" },
+        ],
+      },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
   };

@@ -6,6 +6,59 @@ title: Linux 🐧
 
 Добро пожаловать в мир Linux! Здесь собраны основные команды и приёмы для эффективной работы в терминале. 🚀
 
+## 🧹 Обновление, очистка, перезагрузка
+```bash
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo reboot
+```
+```
+apt update &&  apt upgrade -y &&  apt autoremove -y &&  apt clean -y &&  reboot
+```
+```
+su -c "apt update && apt upgrade -y && apt autoremove -y && apt clean -y && reboot"
+```
+
+---
+
+## 1. Speedtest CLI от Ookla (рекомендуемый)
+
+Для Debian (и других систем на основе `.deb`) проще всего установить его через скрипт от Ookla, так как в стандартных репозиториях может быть другая версия .
+
+1.  Скачайте и установите официальный пакет с помощью скрипта:
+    ```bash
+    curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+    sudo apt install speedtest
+    ```
+    > **Важно:** В некоторых источниках для Red Hat-подобных систем используется `script.rpm.sh` , для Debian нужен `script.deb.sh`.
+
+2.  Запустите тест:
+    ```bash
+    speedtest
+    ```
+
+## 2. Fast CLI (от Netflix)
+
+1.  Установите Node.js и npm (если они еще не установлены):
+    ```bash
+    sudo apt update
+    sudo apt install nodejs npm
+    ```
+
+2.  Установите fast-cli глобально через npm:
+    ```bash
+    sudo npm install --global fast-cli
+    ```
+
+3.  Запустите тест:
+    *   Только скорость загрузки:
+        ```bash
+        fast
+        ```
+    *   Скорость загрузки и отдачи (с флагом `-u`):
+        ```bash
+        fast -u
+        ```
+
+
 ---
 
 ## 📁 Навигация и файлы
@@ -221,10 +274,6 @@ journalctl -u myjob.service -f
 
 ---
 
-## 🧹 Обновление, очистка, перезагрузка
-```bash
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo reboot
-```
 
 ## ✏️ Редактор с проверкой кода 
 ```bash
