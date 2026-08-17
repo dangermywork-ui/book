@@ -107,6 +107,7 @@ const SoftBlock = (title, extraItems = []) => {
       { text: "Zabbix", link: "/zabbix/zabbix_команды" },
       { text: "SFTP", link: "/sftp/sftp_в_windows" },
       { text: "UFW", link: "/ufw/ufw_команды" },
+      { text: "Docker", link: "/docker/команды_docker.md" },
       ...extraItems, // Добавляем уникальные пункты, если есть
     ],
   };
